@@ -7,6 +7,6 @@ build:
   artifacts:
     build/libs/*.jar: /
 run:
-  jarName: netology-pomodoro-bot-1.0-SNAPSHOT.jar
+  jarName: netology-pomodoro-bot-1.0-SNAPSHOT-all.jar
   persistenceMount: /data
   containerPort: 80
