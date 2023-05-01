@@ -4,10 +4,9 @@ meta:
     name: gradle
     version: 17
 build:
-  args: shadowJar
   artifacts:
     build/libs/*.jar: /
 run:
-  jarName: netology-pomodoro-bot-1.0-SNAPSHOT-all.jar
+  jarName: netology-pomodoro-bot-1.0-SNAPSHOT.jar
   persistenceMount: /data
   containerPort: 80

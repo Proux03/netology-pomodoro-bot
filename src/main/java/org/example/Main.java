@@ -43,8 +43,8 @@ public class Main {
             if(update.hasMessage() && update.getMessage().hasText()) {
                 Long chatId = update.getMessage().getChatId();
                 if(update.getMessage().getText().equals("/start")) {
-                    sendMsg(chatId.toString(), "Pomodoro - сделай своё время более эффективным. " +
-                            "Задай мне время работы и отдыха в минутах, через пробел. Например, '1 1'.");
+                    sendMsg(chatId.toString(), "Pomodoro - СЃРґРµР»Р°Р№ СЃРІРѕС‘ РІСЂРµРјСЏ Р±РѕР»РµРµ СЌС„С„РµРєС‚РёРІРЅС‹Рј. " +
+                            "Р—Р°РґР°Р№ РјРЅРµ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹ Рё РѕС‚РґС‹С…Р° РІ РјРёРЅСѓС‚Р°С…, С‡РµСЂРµР· РїСЂРѕР±РµР». РќР°РїСЂРёРјРµСЂ, '1 1'.");
                 } else {
                     String[] args = update.getMessage().getText().split(" ");
                     if (args.length >= 1) {
@@ -63,13 +63,13 @@ public class Main {
 
         public void checkTimer() throws InterruptedException {
             while(true) {
-                System.out.println("Количество таймеров пользователей " + timers.size());
+                System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ С‚Р°Р№РјРµСЂРѕРІ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ " + timers.size());
                 timers.forEach((timer, userId) -> {
                     if(Instant.now().isAfter(timer.timer)) {
                         timers.remove(timer);
                         switch (timer.timerType) {
-                            case WORK -> sendMsg(userId.toString(), "Пора отдыхать");
-                            case BREAK -> sendMsg(userId.toString(), "Таймер завершил свою работу");
+                            case WORK -> sendMsg(userId.toString(), "???? ????????");
+                            case BREAK -> sendMsg(userId.toString(), "?????? ???????? ???? ??????");
                         }
                     }
                 });
@@ -83,7 +83,7 @@ public class Main {
 
         @Override
         public String getBotUsername() {
-            return "Pomodoro бот";
+            return "Pomodoro bot";
         }
 
         private void sendMsg(String chatId, String text) {
@@ -106,13 +106,13 @@ public class Main {
                 String chatId = update.getMessage().getChatId().toString();
                 if(update.getMessage().getText().equals("/start")) {
                     userCount++;
-                    sendMsg(chatId, "Привет, я попугай бот! " +
-                            "Буду повторять всё за тобой)");
+                    sendMsg(chatId, "??????, ? ??????? ???! " +
+                            "???? ????????? ?? ?? ?????)");
                 } else {
                     sendMsg(chatId, update.getMessage().getText());
                 }
             }
-            System.out.println("Количество пользователей " + userCount);
+            System.out.println("?????????? ????????????? " + userCount);
         }
 
         private void sendMsg(String chatId, String text) {
@@ -130,7 +130,7 @@ public class Main {
 
         @Override
         public String getBotUsername() {
-            return "Попугай бот";
+            return "??????? ???";
         }
     }
 }
