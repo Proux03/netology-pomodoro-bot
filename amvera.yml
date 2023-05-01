@@ -4,6 +4,7 @@ meta:
     name: gradle
     version: 17
 build:
+  args: shadowJar
   artifacts:
     build/libs/*.jar: /
 run:
